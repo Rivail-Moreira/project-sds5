@@ -13,41 +13,45 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_sellers")
 public class Seller {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String name;
-	
-	@OneToMany(mappedBy = "seller")
-	private List<Sale> sales = new ArrayList<>();
-	
-	public Seller() {
-	}
 
-	public Seller(Long id, String name) {
-		this.id = id;
-		this.name = name;
-	}
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long id;
+		private String name;
+		
+		@OneToMany(mappedBy = "seller")
+		private List<Sale> sales = new ArrayList <>();
+		
+		public Seller () 
+		{
+			
+		}
 
-	public Long getId() {
-		return id;
-	}
+		public Seller(Long id, String name){
+			this.id = id;
+			this.name = name;
+		}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+		public Long getId() {
+			return id;
+		}
 
-	public String getName() {
-		return name;
-	}
+		public void setId(Long id) {
+			this.id = id;
+		}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+		public String getName() {
+			return name;
+		}
 
-	public List<Sale> getSales() {
-		return sales;
-	}
-	
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public List<Sale> getSales() {
+			return sales;
+		}
+		
+		
+		
 }
